@@ -1,0 +1,12 @@
+const buttons = document.querySelectorAll('.button-group button');
+
+buttons.forEach(button => {
+    button.addEventListener('click', function (e) {
+        e.preventDefault(); // Prevent default button action
+        const targetSection = document.getElementById(this.id.replace('-btn', '')); // Get target section by removing '-btn' from button id
+        targetSection.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    });
+});
